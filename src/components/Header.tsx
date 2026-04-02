@@ -1,5 +1,6 @@
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 
 export function Header() {
   return (
@@ -29,12 +30,21 @@ export function Header() {
         </a>
       </nav>
 
-      <Button
-        variant="outline"
-        className="rounded-full border-blue-500 text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 bg-transparent"
-      >
-        Попробовать бесплатно
-      </Button>
+      <div className="flex items-center gap-3">
+        <Link
+          to="/spin-win"
+          className="hidden md:flex items-center gap-1.5 text-sm font-medium text-yellow-400/80 hover:text-yellow-300 transition-colors"
+        >
+          <Sparkles className="h-4 w-4" />
+          Spin &amp; Win
+        </Link>
+        <Button
+          variant="outline"
+          className="rounded-full border-blue-500 text-blue-400 hover:bg-blue-500/10 hover:text-blue-300 bg-transparent"
+        >
+          Попробовать бесплатно
+        </Button>
+      </div>
     </header>
   )
 }
